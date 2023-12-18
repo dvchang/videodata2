@@ -7,9 +7,10 @@
 //
 
 #import "VDTViewController.h"
+#import "VDTDataFetcher.h"
 
 @interface VDTViewController ()
-
+@property(nonatomic, strong) VDTDataFetcher *fetcher;
 @end
 
 @implementation VDTViewController
@@ -17,6 +18,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.fetcher = [[VDTDataFetcher alloc] init];
+    [self.fetcher fetchData:^(NSArray<VDTData *> * _Nullable data, NSError * _Nullable error) {
+        NSLog(@"good ! %@", data);
+    }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
