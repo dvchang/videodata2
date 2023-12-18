@@ -1,0 +1,6 @@
+framework module VideoData2 {
+  umbrella header "VideoData2-umbrella.h"
+
+  export *
+  module * { export * }
+}
